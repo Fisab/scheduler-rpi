@@ -1,4 +1,4 @@
 requests
 dropbox
 pyyaml
-crontab
+python-crontab

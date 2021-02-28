@@ -3,9 +3,12 @@ from dropbox.files import WriteMode
 from dropbox.exceptions import ApiError, AuthError
 import yaml
 import logging
+import os
 
 
-with open('data.yml') as file:
+__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+with open(os.path.join(__location__, 'data.yml')) as file:
 	config = yaml.load(file, Loader=yaml.FullLoader)
 	access_token = config['dropbox']['token']
 
